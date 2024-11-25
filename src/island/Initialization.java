@@ -1,6 +1,6 @@
 package island;
 
-import island.settings.Text;
+import island.setting.Text;
 
 import java.util.Scanner;
 

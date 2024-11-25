@@ -1,7 +1,7 @@
-package island.herbivores;
+package island.herbivore;
 
 import island.Animal;
-import island.settings.Eatable;
+import island.setting.Eatable;
 
 public class Herbivore extends Animal {
     @Override

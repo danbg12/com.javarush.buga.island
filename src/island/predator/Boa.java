@@ -1,4 +1,4 @@
-package island.predators;
+package island.predator;
 
 public class Boa extends Predator {
 

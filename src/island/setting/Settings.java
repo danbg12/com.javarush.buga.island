@@ -1,8 +1,8 @@
-package island.settings;
+package island.setting;
 
 import island.Plants;
-import island.herbivores.*;
-import island.predators.*;
+import island.herbivore.*;
+import island.predator.*;
 
 import java.util.HashMap;
 import java.util.Map;

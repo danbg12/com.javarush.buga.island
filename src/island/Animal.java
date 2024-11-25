@@ -1,6 +1,6 @@
 package island;
 
-import island.settings.Eatable;
+import island.setting.Eatable;
 
 public abstract class Animal implements Eatable {
 

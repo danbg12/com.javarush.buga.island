@@ -1,7 +1,7 @@
-package island.predators;
+package island.predator;
 
 import island.Animal;
-import island.settings.Eatable;
+import island.setting.Eatable;
 
 public class Predator extends Animal {
 

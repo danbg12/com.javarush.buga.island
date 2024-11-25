@@ -1,15 +1,10 @@
 package island;
 
-import island.herbivores.*;
-import island.predators.*;
-import island.settings.Settings;
+import island.herbivore.*;
+import island.predator.*;
+import island.setting.Settings;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Cell {

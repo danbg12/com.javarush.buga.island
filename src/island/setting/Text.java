@@ -1,4 +1,4 @@
-package island.settings;
+package island.setting;
 
 public class Text {
 

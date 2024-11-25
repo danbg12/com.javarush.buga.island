@@ -1,13 +1,13 @@
-package island.predators;
+package island.herbivore;
 
-public class Eagle extends Predator {
+public class Horse extends Herbivore {
 
-    private final double WEIGHT = 6;
-    private final int MAX_SPEED = 3;
-    private final double MAX_SATIETY = 1;
+    private final double WEIGHT = 400;
+    private final int MAX_SPEED = 4;
+    private final double MAX_SATIETY = 60;
     private double ACTUAL_SATIETY;
-    private final byte EATING_PROBABILITY_INDEX = 4;
-    private final String name = "Eagle";
+    private final byte EATING_PROBABILITY_INDEX = 5;
+    private final String name = "Horse";
 
     public double getWEIGHT() { return WEIGHT;}
 

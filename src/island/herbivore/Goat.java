@@ -1,13 +1,13 @@
-package island.herbivores;
+package island.herbivore;
 
-public class Mouse extends Herbivore {
+public class Goat extends Herbivore {
 
-    private final double WEIGHT = 0.05;
-    private final int MAX_SPEED = 1;
-    private final double MAX_SATIETY = 0.01;
+    private final double WEIGHT = 60;
+    private final int MAX_SPEED = 3;
+    private final double MAX_SATIETY = 10;
     private double ACTUAL_SATIETY;
-    private final byte EATING_PROBABILITY_INDEX = 8;
-    private final String name = "Mouse";
+    private final byte EATING_PROBABILITY_INDEX = 9;
+    private final String name = "Goat";
 
     public double getWEIGHT() { return WEIGHT;}
 
