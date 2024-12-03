@@ -1,4 +1,6 @@
 package com.javarush.island;
+import com.javarush.entity.Animal;
+import com.javarush.entity.Plants;
 import com.javarush.util.Texts;
 import java.util.*;
 import java.util.concurrent.*;

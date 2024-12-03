@@ -1,4 +1,4 @@
-package com.javarush.island;
+package com.javarush.entity;
 
 public class Plants implements Entity {
 

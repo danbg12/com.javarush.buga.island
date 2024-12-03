@@ -1,5 +1,5 @@
-package com.javarush.predator;
-import com.javarush.island.Animal;
+package com.javarush.entity.predator;
+import com.javarush.entity.Animal;
 import com.javarush.island.CellZone;
 import java.util.concurrent.ThreadLocalRandom;
 

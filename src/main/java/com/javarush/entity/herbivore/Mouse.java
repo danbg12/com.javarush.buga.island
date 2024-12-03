@@ -1,4 +1,4 @@
-package com.javarush.herbivore;
+package com.javarush.entity.herbivore;
 
 public class Mouse extends Herbivores {
 

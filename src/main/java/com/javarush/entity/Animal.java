@@ -1,6 +1,7 @@
-package com.javarush.island;
-
-import com.javarush.herbivore.Caterpillar;
+package com.javarush.entity;
+import com.javarush.entity.herbivore.Caterpillar;
+import com.javarush.island.CellZone;
+import com.javarush.island.Island;
 import com.javarush.params.*;
 import com.javarush.util.Directions;
 import com.javarush.util.Texts;
@@ -11,7 +12,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public abstract class Animal implements Entity {
 
     private static Texts text = new Texts();
-
     public String emoji;
     public String simpleNameLowerCase;
     public double weight;
@@ -38,6 +38,8 @@ public abstract class Animal implements Entity {
         }
     }
 
+
+
     public abstract void eat(CellZone cell);
 
     // Every day this method checking actualSatiety field for every animal in collection
@@ -47,6 +49,8 @@ public abstract class Animal implements Entity {
             animalsList.remove(index);
         }
     }
+
+
 
     public void reproduce(List<Animal> animals) {
 
@@ -58,11 +62,9 @@ public abstract class Animal implements Entity {
         // Random chooses one animal from collection
         int randomIndex = ThreadLocalRandom.current().nextInt(0, animals.size());
         Animal animal = animals.get(randomIndex);
-
         if (animal == this) {  // no clones
             return;
         }
-
         // Check if we have more space in collection for this animal type
         int countOfInstanceOnCell = 0;
         if (this.getClass().equals(animal.getClass())) {
@@ -72,7 +74,6 @@ public abstract class Animal implements Entity {
                 }
             }
         }
-
         // If we have space put new instance of this animal type in collection
         if (this.getClass().equals(animal.getClass()) && countOfInstanceOnCell < this.maxPerCell) {
             try {
@@ -85,14 +86,13 @@ public abstract class Animal implements Entity {
         }
     }
 
+
+
     // Method find where is object and return in what directions is possible to move
     // Try all possible scenarios
     public Enum choseDirection(int cellCoordinateX, int cellCoordinateY) {
 
-        if (this.actualSatiety <= 0 || this.actualSatiety <= 25) {
-            return null;
-        }
-
+        if (this.actualSatiety <= 0 || this.actualSatiety <= 25) { return null;}
         this.actualSatiety -= 25;
 
         if (cellCoordinateX > 0 && cellCoordinateY > 0 && cellCoordinateX < Island.getISLAND_HEIGHT() - 1
@@ -156,14 +156,15 @@ public abstract class Animal implements Entity {
             int randomNumberOfDirection = ThreadLocalRandom.current().nextInt(0, 2);
             return randomNumberOfDirection == 0 ? Directions.UP : Directions.LEFT;
         }
-        return Directions.RIGHT;
+        return null;
     }
+
+
 
     // Method move animal to other zone / cell
     public void moveToOtherCell(Enum direction, int cellCoordinateX, int cellCoordinateY , List<Animal> list , int index) {
 
         if ( cellCoordinateX % 2 == 0) { return;}
-
         if (this.actualSatiety <= 0) { this.die(index , list);}
 
         if ( direction == null || this.actualSatiety <= 25 ) { return; }
@@ -236,6 +237,8 @@ public abstract class Animal implements Entity {
             }
         }
     }
+
+
 
     // Every day this method reduces the actualSatiety field for every animal in collection
     public void dailyWorker(List<Animal> list , int index) {

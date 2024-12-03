@@ -1,4 +1,4 @@
-package com.javarush.predator;
+package com.javarush.entity.predator;
 
 public class Eagle extends Predators {
 

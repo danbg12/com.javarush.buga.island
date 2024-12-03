@@ -1,6 +1,8 @@
 package com.javarush.island;
-import com.javarush.herbivore.*;
-import com.javarush.predator.*;
+import com.javarush.entity.Animal;
+import com.javarush.entity.Plants;
+import com.javarush.entity.herbivore.*;
+import com.javarush.entity.predator.*;
 import com.javarush.util.Texts;
 import lombok.Getter;
 import java.lang.reflect.InvocationTargetException;

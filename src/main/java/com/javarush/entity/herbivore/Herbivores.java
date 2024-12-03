@@ -1,7 +1,7 @@
-package com.javarush.herbivore;
-import com.javarush.island.Animal;
+package com.javarush.entity.herbivore;
+import com.javarush.entity.Animal;
 import com.javarush.island.CellZone;
-import com.javarush.island.Plants;
+import com.javarush.entity.Plants;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Herbivores extends Animal {
