@@ -1,0 +1,180 @@
+wolf:
+  emoji: "🐺"
+  simple_name_to_lower_case: "wolf"
+  weight: 50.0
+  max_per_cell: 30
+  max_speed: 3
+  food_needed_for_max_satiety: 8.0
+  eating_probability:
+    horse: 10
+    deer: 15
+    rabbit: 60
+    mouse: 80
+    goat: 60
+    sheep: 70
+    boar: 15
+    buffalo: 10
+    duck: 40
+
+boa:
+  emoji: "🐍"
+  simple_name_to_lower_case: "boa"
+  weight: 15.0
+  max_per_cell: 30
+  max_speed: 1
+  food_needed_for_max_satiety: 3.0
+  eating_probability:
+    fox: 15
+    rabbit: 20
+    mouse: 40
+    duck: 10
+
+fox:
+  emoji: "🦊"
+  simple_name_to_lower_case: "fox"
+  weight: 8.0
+  max_per_cell: 30
+  max_speed: 2
+  food_needed_for_max_satiety: 2.0
+  eating_probability:
+    rabbit: 70
+    mouse: 90
+    duck: 60
+    caterpillar: 40
+
+bear:
+  emoji: "🐻"
+  simple_name_to_lower_case: "bear"
+  weight: 500.0
+  max_per_cell: 5
+  max_speed: 2
+  food_needed_for_max_satiety: 80.0
+  eating_probability:
+    boa: 80
+    horse: 40
+    deer: 80
+    rabbit: 80
+    mouse: 90
+    goat: 70
+    sheep: 70
+    boar: 50
+    buffalo: 20
+    duck: 10
+
+eagle:
+  emoji: "🦅"
+  simple_name_to_lower_case: "eagle"
+  weight: 6.0
+  max_per_cell: 20
+  max_speed: 3
+  food_needed_for_max_satiety: 1.0
+  eating_probability:
+    fox: 10
+    rabbit: 90
+    mouse: 90
+    duck: 80
+
+horse:
+  emoji: "🐎"
+  simple_name_to_lower_case: "horse"
+  weight: 400.0
+  max_per_cell: 20
+  max_speed: 4
+  food_needed_for_max_satiety: 60.0
+  eating_probability:
+    plant: 100
+
+deer:
+  emoji: "🦌"
+  simple_name_to_lower_case: "deer"
+  weight: 300.0
+  max_per_cell: 20
+  max_speed: 4
+  food_needed_for_max_satiety: 50.0
+  eating_probability:
+    plant: 100
+
+rabbit:
+  emoji: "🐇"
+  simple_name_to_lower_case: "rabbit"
+  weight: 2.0
+  max_per_cell: 150
+  max_speed: 2
+  food_needed_for_max_satiety: 0.45
+  eating_probability:
+    plant: 100
+
+mouse:
+  emoji: "🐁"
+  simple_name_to_lower_case: "mouse"
+  weight: 0.05
+  max_per_cell: 500
+  max_speed: 1
+  food_needed_for_max_satiety: 0.01
+  eating_probability:
+    plant: 100
+    caterpillar: 90
+
+goat:
+  emoji: "🐐"
+  simple_name_to_lower_case: "goat"
+  weight: 60.0
+  max_per_cell: 140
+  max_speed: 3
+  food_needed_for_max_satiety: 10.0
+  eating_probability:
+    plant: 100
+
+
+sheep:
+  emoji: "🐑"
+  simple_name_to_lower_case: "sheep"
+  weight: 70.0
+  max_per_cell: 140
+  max_speed: 3
+  food_needed_for_max_satiety: 15.0
+  eating_probability:
+    plant: 100
+
+boar:
+  emoji: "🐗"
+  simple_name_to_lower_case: "boar"
+  weight: 400.0
+  max_per_cell: 50
+  max_speed: 2
+  food_needed_for_max_satiety: 50.0
+  eating_probability:
+    mouse: 50
+    caterpillar: 90
+    plant: 100
+
+buffalo:
+  emoji: "🐃"
+  simple_name_to_lower_case: "buffalo"
+  weight: 700.0
+  max_per_cell: 10
+  max_speed: 3
+  food_needed_for_max_satiety: 100.0
+  eating_probability:
+    plant: 100
+
+duck:
+  emoji: "🦆"
+  simple_name_to_lower_case: "duck"
+  weight: 1.0
+  max_per_cell: 200
+  max_speed: 4
+  food_needed_for_max_satiety: 0.15
+  eating_probability:
+    plant: 100
+    caterpillar: 90
+
+caterpillar:
+  emoji: "🐛"
+  simple_name_to_lower_case: "caterpillar"
+  weight: 0.01
+  max_per_cell: 1000
+  max_speed: 0
+  food_needed_for_max_satiety: 0.0
+  eating_probability:
+    plant: 100
