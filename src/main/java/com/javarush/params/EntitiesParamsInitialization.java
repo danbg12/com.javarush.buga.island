@@ -16,7 +16,7 @@ public class EntitiesParamsInitialization {
         // Read bytes from yaml with inputStream
         try (InputStream inputStream = EntitiesParamsInitialization.class.
                 getClassLoader().
-                getResourceAsStream("Params_all_entities")) {
+                getResourceAsStream("Params_all_entities.yaml")) {
 
             if (inputStream == null) {
                 System.out.println(text.getFAILED_INPUT_READING());
