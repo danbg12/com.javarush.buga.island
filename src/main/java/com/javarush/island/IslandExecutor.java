@@ -78,7 +78,6 @@ public class IslandExecutor extends Thread {
                 for (int j = 0; j < arrayWithAllCells[i].length; j++) {
                     executor.submit(arrayWithAllCells[i][j]);
                 }
-
             }
         }
         scheduledExecutor.shutdown();
