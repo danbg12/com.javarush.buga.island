@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
-public abstract class Animal implements Entity {
+public abstract class Animal {
 
     private static Texts text = new Texts();
     public String emoji;

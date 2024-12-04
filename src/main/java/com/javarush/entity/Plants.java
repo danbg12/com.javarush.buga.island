@@ -1,6 +1,6 @@
 package com.javarush.entity;
 
-public class Plants implements Entity {
+public class Plants{
 
     public String emoji;
     public double weight ;
