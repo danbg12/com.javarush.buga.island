@@ -21,6 +21,8 @@ public abstract class Animal {
     public int actualSatiety;
     public Map<String, Integer> eatingProbability;
 
+
+
     // General Constructor for all entities and all fields
     public Animal(String animalName) {
         AnimalParams params = EntitiesParamsInitialization.getParams(animalName);
@@ -42,6 +44,8 @@ public abstract class Animal {
 
     public abstract void eat(CellZone cell);
 
+
+
     // Every day this method checking actualSatiety field for every animal in collection
     // If field value is under 0 or equals 0 the animal is removed from collection .Animal is died !
     public void die(int index , List<Animal> animalsList) {
@@ -54,17 +58,14 @@ public abstract class Animal {
 
     public void reproduce(List<Animal> animals) {
 
-        if ( this.getClass().equals(Caterpillar.class)) { return;}
+        if (animals.size() == 0 || this.actualSatiety <= 25) { return;}
 
-        if (animals.size() == 0 || this.actualSatiety <= 0) {
-            return;
-        }
         // Random chooses one animal from collection
         int randomIndex = ThreadLocalRandom.current().nextInt(0, animals.size());
         Animal animal = animals.get(randomIndex);
-        if (animal == this) {  // no clones
-            return;
-        }
+
+        if (animal == this) { return; } // no clones
+
         // Check if we have more space in collection for this animal type
         int countOfInstanceOnCell = 0;
         if (this.getClass().equals(animal.getClass())) {
@@ -164,7 +165,8 @@ public abstract class Animal {
     // Method move animal to other zone / cell
     public void moveToOtherCell(Enum direction, int cellCoordinateX, int cellCoordinateY , List<Animal> list , int index) {
 
-        if ( cellCoordinateX % 2 == 0) { return;}
+        if (this.getClass().equals(Caterpillar.class)) { return;}
+
         if (this.actualSatiety <= 0) { this.die(index , list);}
 
         if ( direction == null || this.actualSatiety <= 25 ) { return; }

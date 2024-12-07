@@ -18,6 +18,7 @@ public class CellZone implements Runnable {
     private final Integer coordinateX;
     private final Integer coordinateY;
 
+    // Constructor for Cell coordinates
     public CellZone(Integer coordinateX, Integer coordinateY) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
@@ -69,16 +70,19 @@ public class CellZone implements Runnable {
         }
     }
 
+
     // Run all methods for every animal
     @Override
     public void run() {
-        for (int i = 0; i < animalsListOnCell.size(); i++) {
-            animalsListOnCell.get(i).die( i , animalsListOnCell);
-            animalsListOnCell.get(i).dailyWorker(animalsListOnCell , i);
-            animalsListOnCell.get(i).eat(this);
-            animalsListOnCell.get(i).reproduce(animalsListOnCell);
-            animalsListOnCell.get(i).moveToOtherCell(animalsListOnCell.get(i).
-                    choseDirection(coordinateX ,coordinateY), coordinateX , coordinateY , animalsListOnCell , i);
+        synchronized (this) {
+            for (int i = 0; i < animalsListOnCell.size() - 1 ; i++) {
+                animalsListOnCell.get(i).dailyWorker(animalsListOnCell, i);
+                animalsListOnCell.get(i).eat(this);
+                animalsListOnCell.get(i).reproduce(animalsListOnCell);
+                animalsListOnCell.get(i).moveToOtherCell(animalsListOnCell.get(i).
+                        choseDirection(coordinateX, coordinateY), coordinateX, coordinateY, animalsListOnCell, i);
+                animalsListOnCell.get(i).die(i, animalsListOnCell);
+            }
         }
     }
 }

@@ -9,13 +9,13 @@ public class Predators extends Animal {
         super(animalName);
     }
 
+
     // Method eat for predators . All predators eat only other animals
     // Victim for predator is random and eating probability is also random
     @Override
     public void eat(CellZone cell) {
-        if (cell.animalsListOnCell.size() == 0) {
-            return;
-        }
+        if (cell.animalsListOnCell.size() == 0) { return;}
+
         int randomIndex = ThreadLocalRandom.current().nextInt(0, cell.animalsListOnCell.size());
         Animal animal = cell.animalsListOnCell.get(randomIndex);
         int eatingTodayProbability = ThreadLocalRandom.current().nextInt(0 , 100);

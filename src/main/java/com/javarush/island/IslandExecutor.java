@@ -12,14 +12,16 @@ public class IslandExecutor extends Thread {
     private static Texts text = new Texts();
     private static final int POOL_SIZE = 5;
     private static final int SCHEDULED_POOL_SIZE = 1;
-    private static final int SIMULATION_DAYS = 100;
+    private static final int SIMULATION_DAYS = 100; // iterations count
 
     // Method execute for all animals methods from class Animal
     // Scheduled executor is used to print statistics for every day from 100 and add more plants in all zones / cells
     public void runIsland() {
+        // Island initialization
         Island.fillArrayWithCells();
         CellZone[][] arrayWithAllCells = Island.arrayWithAllCells;
 
+        // Used executors
         ExecutorService executor = Executors.newFixedThreadPool(POOL_SIZE);
         ScheduledExecutorService scheduledExecutor = Executors.newScheduledThreadPool(SCHEDULED_POOL_SIZE);
 
@@ -72,11 +74,13 @@ public class IslandExecutor extends Thread {
                 }
             };
 
+            // Executor for task
             scheduledExecutor.scheduleAtFixedRate(task , 0 , 100, TimeUnit.SECONDS);
 
+            // Executor for Island
             for (int i = 0; i < arrayWithAllCells.length; i++) {
                 for (int j = 0; j < arrayWithAllCells[i].length; j++) {
-                    executor.submit(arrayWithAllCells[i][j]);
+                    executor.execute(arrayWithAllCells[i][j]);
                 }
             }
         }

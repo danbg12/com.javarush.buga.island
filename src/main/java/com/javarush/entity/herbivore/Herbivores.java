@@ -10,14 +10,15 @@ public class Herbivores extends Animal {
         super(animalName);
     }
 
+
     // Method ead for herbivores . Some herbivore are half predators and ea few kind of animals
     // If the animal is half predator this method try to feed firstly with other animal
     // If first try to eat other random animal is failed this animal eat plants .
     @Override
     public void eat(CellZone cell) {
-        if (cell.animalsListOnCell.size() == 0 || cell.plantsListOnCell.size() == 0) {
-            return;
-        }
+
+        if (cell.animalsListOnCell.size() == 0 || cell.plantsListOnCell.size() == 0) { return;}
+
         int randomIndexForAnimals = ThreadLocalRandom.current().nextInt(0, cell.animalsListOnCell.size());
         int randomIndexForPlants = ThreadLocalRandom.current().nextInt(0, cell.plantsListOnCell.size());
         Animal animal = cell.animalsListOnCell.get(randomIndexForAnimals);
