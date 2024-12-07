@@ -58,7 +58,7 @@ public abstract class Animal {
 
     public void reproduce(List<Animal> animals) {
 
-        if (animals.size() == 0 || this.actualSatiety <= 25) { return;}
+        if (animals.size() == 0 || this.actualSatiety <= 0) { return;}
 
         // Random chooses one animal from collection
         int randomIndex = ThreadLocalRandom.current().nextInt(0, animals.size());
